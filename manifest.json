@@ -1,0 +1,28 @@
+{
+    "widget":{
+            "name": "widget.name",
+            "description": "widget.description",
+            "short_description": "widget.short_description",
+            "code": "eksport8_widget",
+            "secret_key": "dbcf609d92c3c50228bb36ba6114a89030d7973564231c5d4b34e23559e0a17e",
+            "version": "1.0.0",
+            "interface_version": 2,
+            "init_once": false,
+            "locale":[
+                    "ru"
+                    ],
+            "installation": true
+            },
+    "locations":[
+            "llist-1",
+            "clist-1",
+            "settings"
+            ],
+    "settings":{
+                "login":{
+                        "name": "settings.login",
+                        "type": "text",
+                        "required": true
+                        }
+            }
+}
