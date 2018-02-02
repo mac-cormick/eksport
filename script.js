@@ -1,25 +1,18 @@
 define(['jquery'], function($){
-    var CustomWidget = function () {
-    	var self = this;
+	var CustomWidget = function () {
+		var self = this;
 		this.callbacks = {
 			render: function(){
-				 self.render_template({
-          caption: {
-            class_name: 'js-ac-caption',
-            html: ''
-          },
-          body: '',
-          render: '\
-                 <div class="ac-form">\
-             <div id="js-ac-sub-lists-container">\
-             </div>\
-                 <div id="js-ac-sub-subs-container">\
-                 </div>\
-                 <div class="ac-form-button ac_sub">SEND</div>\
-                 </div>\
-             <div class="ac-already-subs"></div>\
-                 <link type="text/css" rel="stylesheet" href="/widgets/' + w_code + '/style.css" >'
-        });
+				w_code = self.get_settings().widget_code;
+				self.render_template({
+					caption: {
+						class_name: 'js-ac-caption',
+						html: ''
+					},
+					body: '',
+					render: '\
+					<div class="ac-form-button ac_sub">SEND</div>'
+				});
 				console.log('render');
 				return true;
 			},
@@ -43,9 +36,10 @@ define(['jquery'], function($){
 						console.log(data);
 						console.log(llink);
 						$.get(llink, function() {
-  					console.log('Загрузка завершена.');
+							console.log('Загрузка завершена.');
+						});
 					});
-				}
+				};
 				console.log('bind_actions');
 				return true;
 			},
@@ -66,27 +60,25 @@ define(['jquery'], function($){
 						console.log(c_data);
 					}
 				},
-			leads: {
+				leads: {
 					//select leads in list and clicked on widget name
 					selected: function(){
 						var l_data = self.list_selected().selected;
 						$(self.ldata).remove();
 						self.ldata = l_data;
 						console.log(self.ldata);
-					});
-
 					}
 				},
-			tasks: {
+				tasks: {
 					//select taks in list and clicked on widget name
 					selected: function(){
 						var t_data = self.list_selected().selected;
 						console.log(t_data);
 					}
 				}
+			};
+			return this;
 		};
-		return this;
-    };
 
-return CustomWidget;
-});
+		return CustomWidget;
+	});
