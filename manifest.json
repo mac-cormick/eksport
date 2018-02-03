@@ -3,8 +3,8 @@
             "name": "widget.name",
             "description": "widget.description",
             "short_description": "widget.short_description",
-            "code": "eksport12_widget",
-            "secret_key": "ae2e8d4f31100c3d04d4f1f2644f6fce33cb8969bf8d695cd384e219aca43385",
+            "code": "eksport20_widget",
+            "secret_key": "19628b0bcce898e18a6209e0b2f17697e5fa60c542ecc4f30bab0f8bbc12e922",
             "version": "1.0.0",
             "interface_version": 2,
             "init_once": false,
@@ -14,8 +14,8 @@
             "installation": true
             },
     "locations":[
-            "llist-1",
-            "clist-1",
+            "llist-0",
+            "clist-0",
             "settings"
             ],
     "settings":{
